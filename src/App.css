@@ -1,0 +1,59 @@
+.App{
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+}
+.App > h1 {
+  text-align: center;
+}
+.wrapper {
+	display: grid;
+  grid-template-columns: auto 1fr;
+	grid-template-rows: auto 1fr;
+}
+.hours > div, .days > div, .tempList > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hours > div, .days > div {
+  padding: 10px 20px;
+}
+.tempList > div > img {
+  width: 50%;
+}
+.hours {
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 1;
+	grid-row-end: 2;
+  background: linear-gradient(to right, rgb(107, 107, 107), 
+    rgb(132, 131, 131), rgb(156, 155, 156), rgb(181, 179, 180),
+    rgb(205, 203, 205), rgb(230, 227, 229), rgb(210, 207, 209), 
+    rgb(189, 187, 188), rgb(169, 167, 168), rgb(148, 147, 148), 
+    rgb(128, 127, 127), rgb(107, 107, 107));
+}
+.days {
+	display: grid;
+  grid-template-columns: repeat(1, 1fr);  
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3; 
+  border-top: 1px solid;
+  margin-top: -1px;
+}
+.tempList {
+  display: grid;
+	grid-template-columns: repeat(8, 1fr);	
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 2;
+	grid-row-end: 3;	
+  border-left: 1px solid;
+}
+.tempList > div, .days > div {
+  border-bottom: 1px solid;
+}
