@@ -14,11 +14,14 @@ const TempList = (props) => {
       const temp = weather.main.temp;
       cells.push(
         <div key={key + emptyCellsCount}>
-          {Math.round(temp - 273.15, 2)}
+          <span>{Math.round(temp - 273.15, 2)}</span>
           <img src={imgSrc} alt={weather.weather[0].description}/>
         </div>  
       )
-    }) 
+    })
+    for (let i = 0; i < 8-emptyCellsCount; i++) {
+      cells.push(<div key={emptyCellsCount+40+i}></div>);
+    }
     return cells;
   }
 	return <>{tempList(props.list)}</>;

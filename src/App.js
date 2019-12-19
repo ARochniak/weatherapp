@@ -31,7 +31,7 @@ function App() {
       const {latitude, longitude} = coords;
       let weather;
       try {
-        let response = await fetch(`http://api.openweathermap.org/data/2.5/forecast?APPID=373a158eb6eb097745db5c80be9b3eaf&lat=${latitude}&lon=${longitude}`);
+        let response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?APPID=373a158eb6eb097745db5c80be9b3eaf&lat=${latitude}&lon=${longitude}`);
         weather = await response.json();
       } catch (err) {
         return err;

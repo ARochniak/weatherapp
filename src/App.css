@@ -5,6 +5,7 @@
 }
 .App > h1 {
   text-align: center;
+  margin: 7px;
 }
 .wrapper {
 	display: grid;
@@ -17,7 +18,7 @@
   justify-content: center;
 }
 .hours > div, .days > div {
-  padding: 10px 20px;
+  padding: 0.5vh 1vw;
 }
 .tempList > div > img {
   width: 50%;
@@ -56,4 +57,61 @@
 }
 .tempList > div, .days > div {
   border-bottom: 1px solid;
+}
+
+@media (orientation: portrait) {
+  .hours {
+    grid-template-columns: repeat(1, 1fr);  
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3; 
+    background: linear-gradient(to bottom, rgb(107, 107, 107), 
+      rgb(132, 131, 131), rgb(156, 155, 156), rgb(181, 179, 180),
+      rgb(205, 203, 205), rgb(230, 227, 229), rgb(210, 207, 209), 
+      rgb(189, 187, 188), rgb(169, 167, 168), rgb(148, 147, 148), 
+      rgb(128, 127, 127), rgb(107, 107, 107));
+  }
+  .days {
+    display: grid;
+    grid-template-columns: repeat(6, calc(100%/6));
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    border-top: none;
+  }
+  .days div {
+    border-left: 1px solid;
+  }
+  .days div span {
+    font-size: 0.9em;
+    transform: rotate(-30deg) translateY(-8px);
+    transform-origin: 50% 50%;
+  }
+  .tempList {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(8, 1fr);  
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;  
+  }
+  .tempList div {
+    display: flex;
+    flex-direction: column;
+    border-bottom: none;
+    border-right: 1px solid;
+  }
+  .tempList div:nth-last-child(-n+8) {
+    border-right: none;
+  }
+  .tempList span {
+    font-size: 1.1em;
+  }
+  .tempList>div>img {
+    width: 70%;
+  }
 }
